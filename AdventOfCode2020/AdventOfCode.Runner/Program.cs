@@ -8,7 +8,7 @@ namespace AdventOfCode.Runner
 {
     public static class Program
     {
-        private static List<Type> Solutions = new List<Type>();
+        private static List<Type> Solutions = new List<Type>{};
 
         public static void Main(string[] args)
         {
@@ -23,14 +23,9 @@ namespace AdventOfCode.Runner
             {
                 Type solution = Solutions[i];
                 MethodInfo describe = solution.GetMethod("describe");
-                if (describe == null)
-                    continue;
+                string name = describe?.Invoke(null, null) as string;
 
-                string name = describe.Invoke(null, null) as string;
-                if (string.IsNullOrEmpty(name))
-                    continue;
-
-                Console.WriteLine($"{i}: {name}");
+                Console.WriteLine($"{(i + 1).ToString(CultureInfo.InvariantCulture).PadLeft(2, '0')}: {(!string.IsNullOrEmpty(name) ? name : "(no description)")}");
             }
 
             Console.WriteLine();
