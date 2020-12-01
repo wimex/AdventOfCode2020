@@ -9,7 +9,10 @@ namespace AdventOfCode.Runner
 {
     public static class Program
     {
-        private static readonly List<Type> Solutions = new List<Type> { };
+        private static readonly List<Type> Solutions = new List<Type>
+        {
+            typeof(Day01.Puzzles)
+        };
 
         public static void Main(string[] args)
         {
