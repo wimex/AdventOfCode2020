@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
+using Microsoft.FSharp.Collections;
 
 namespace AdventOfCode.Runner
 {
     public static class Program
     {
-        private static List<Type> Solutions = new List<Type>{};
+        private static readonly List<Type> Solutions = new List<Type> { };
 
         public static void Main(string[] args)
         {
@@ -22,8 +23,8 @@ namespace AdventOfCode.Runner
             for (int i = 0; i < Solutions.Count; i++)
             {
                 Type solution = Solutions[i];
-                MethodInfo describe = solution.GetMethod("describe");
-                string name = describe?.Invoke(null, null) as string;
+                PropertyInfo describe = solution.GetProperty("describe");
+                string name = describe?.GetValue(null) as string;
 
                 Console.WriteLine($"{(i + 1).ToString(CultureInfo.InvariantCulture).PadLeft(2, '0')}: {(!string.IsNullOrEmpty(name) ? name : "(no description)")}");
             }
@@ -53,7 +54,7 @@ namespace AdventOfCode.Runner
                 return;
             }
 
-            object[] parameters = { new[] { input } };
+            object[] parameters = {ListModule.OfSeq(new[] {input})};
             execute.Invoke(null, parameters);
 
             Console.WriteLine();
