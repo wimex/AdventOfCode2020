@@ -14,5 +14,5 @@ module Puzzles =
         let (p1, p2, _) = pairs.Head
         let (t1, t2, t3, _) = triplets.Head
 
-        printfn "Puzzle 1: %d" (p1 * p2)
-        printfn "Puzzle 2: %d" (t1 * t2 * t3)
+        printfn "Puzzle 1: %d <- %d, %d" (p1 * p2) p1 p2
+        printfn "Puzzle 2: %d <- %d, %d, %d" (t1 * t2 * t3) t1 t2 t3
