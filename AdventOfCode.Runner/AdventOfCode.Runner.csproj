@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -7,10 +7,14 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AdventOfCode.Day01\AdventOfCode.Day01.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day02\AdventOfCode.Day02.fsproj" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="App_Data\day01.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="App_Data\day02.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

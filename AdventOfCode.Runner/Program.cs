@@ -11,7 +11,7 @@ namespace AdventOfCode.Runner
     {
         private static readonly List<Type> Solutions = new List<Type>
         {
-            typeof(Day01.Puzzles)
+            typeof(Day01.Puzzles), typeof(Day02.Puzzles)
         };
 
         public static void Main(string[] args)
