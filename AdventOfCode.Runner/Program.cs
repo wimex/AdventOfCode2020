@@ -9,9 +9,10 @@ namespace AdventOfCode.Runner
 {
     public static class Program
     {
-        private static readonly List<Type> Solutions = new List<Type>
+        private static readonly Dictionary<int, Type> Solutions =new Dictionary<int, Type>
         {
-            typeof(Day01.Puzzles), typeof(Day02.Puzzles)
+            {1, typeof(Day01.Puzzles)},
+            {2, typeof(Day02.Puzzles)}
         };
 
         public static void Main(string[] args)
@@ -23,13 +24,15 @@ namespace AdventOfCode.Runner
             Console.WriteLine(separator);
             Console.WriteLine();
 
-            for (int i = 0; i < Solutions.Count; i++)
+            foreach ((int key, Type solution) in Solutions)
             {
-                Type solution = Solutions[i];
+                if(solution == null)
+                    continue;
+
                 PropertyInfo describe = solution.GetProperty("describe");
                 string name = describe?.GetValue(null) as string;
 
-                Console.WriteLine($"{(i + 1).ToString(CultureInfo.InvariantCulture).PadLeft(2, '0')}: {(!string.IsNullOrEmpty(name) ? name : "(no description)")}");
+                Console.WriteLine($"{key.ToString(CultureInfo.InvariantCulture).PadLeft(2, '0')}: {(!string.IsNullOrEmpty(name) ? name : "(no description)")}");
             }
 
             Console.WriteLine();
@@ -49,7 +52,7 @@ namespace AdventOfCode.Runner
             string ident = puzzle.ToString().PadLeft(2, '0');
             string input = $"App_Data{Path.DirectorySeparatorChar}day{ident}.txt";
 
-            Type target = Solutions[puzzle - 1];
+            Type target = Solutions[puzzle];
             MethodInfo execute = target.GetMethod("execute");
             if (execute == null)
             {
@@ -70,7 +73,7 @@ namespace AdventOfCode.Runner
             if (result <= 0)
                 return false;
 
-            return result <= Solutions.Count;
+            return Solutions.ContainsKey(result);
         }
     }
 }
