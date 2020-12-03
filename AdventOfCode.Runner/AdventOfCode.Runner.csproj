@@ -1,22 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\AdventOfCode.Day01\AdventOfCode.Day01.fsproj" />
-    <ProjectReference Include="..\AdventOfCode.Day02\AdventOfCode.Day02.fsproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\AdventOfCode.Day01\AdventOfCode.Day01.fsproj" />
+		<ProjectReference Include="..\AdventOfCode.Day02\AdventOfCode.Day02.fsproj" />
+		<ProjectReference Include="..\AdventOfCode.Day03\AdventOfCode.Day03.fsproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Update="App_Data\day01.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="App_Data\day02.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Update="App_Data\day01.txt">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="App_Data\day02.txt">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="App_Data\day03.txt">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
 
 </Project>
