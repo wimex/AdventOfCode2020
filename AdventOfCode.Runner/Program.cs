@@ -11,9 +11,7 @@ namespace AdventOfCode.Runner
     {
         private static readonly Dictionary<int, Type> Solutions =new Dictionary<int, Type>
         {
-            {1, typeof(Day01.Puzzles)},
-            {2, typeof(Day02.Puzzles)},
-            {3, typeof(Day03.Puzzles)}
+            {1, typeof(Day01.Puzzles)}, {2, typeof(Day02.Puzzles)}, {3, typeof(Day03.Puzzles)}, {4, typeof(Day04.Puzzles)}
         };
 
         public static void Main(string[] args)
