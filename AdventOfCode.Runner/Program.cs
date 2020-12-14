@@ -14,7 +14,7 @@ namespace AdventOfCode.Runner
             {1, typeof(Day01.Puzzles)}, {2, typeof(Day02.Puzzles)}, {3, typeof(Day03.Puzzles)}, {4, typeof(Day04.Puzzles)},
             {5, typeof(Day05.Puzzles)}, {6, typeof(Day06.Puzzles)}, {7, typeof(Day07.Puzzles)}, {8, typeof(Day08.Puzzles)},
             {9, typeof(Day09.Puzzles)}, {10, typeof(Day10.Puzzles)}, {11, typeof(Day11.Puzzles)}, {12, typeof(Day12.Puzzles)},
-            {13, typeof(Day13.Puzzles)}
+            {13, typeof(Day13.Puzzles)}, {14, typeof(Day14.Puzzles)}
         };
 
         public static void Main(string[] args)
