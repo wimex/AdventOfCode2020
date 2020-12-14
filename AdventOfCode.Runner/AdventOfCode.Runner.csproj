@@ -6,20 +6,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Solutions\AdventOfCode.Day01\AdventOfCode.Day01.fsproj" />
-    <ProjectReference Include="..\Solutions\AdventOfCode.Day02\AdventOfCode.Day02.fsproj" />
-    <ProjectReference Include="..\Solutions\AdventOfCode.Day03\AdventOfCode.Day03.fsproj" />
-    <ProjectReference Include="..\Solutions\AdventOfCode.Day04\AdventOfCode.Day04.fsproj" />
-    <ProjectReference Include="..\Solutions\AdventOfCode.Day05\AdventOfCode.Day05.fsproj" />
-    <ProjectReference Include="..\Solutions\AdventOfCode.Day06\AdventOfCode.Day06.fsproj" />
-    <ProjectReference Include="..\Solutions\AdventOfCode.Day07\AdventOfCode.Day07.fsproj" />
-    <ProjectReference Include="..\Solutions\AdventOfCode.Day08\AdventOfCode.Day08.fsproj" />
-    <ProjectReference Include="..\Solutions\AdventOfCode.Day09\AdventOfCode.Day09.fsproj" />
-    <ProjectReference Include="..\Solutions\AdventOfCode.Day10\AdventOfCode.Day10.fsproj" />
-    <ProjectReference Include="..\Solutions\AdventOfCode.Day11\AdventOfCode.Day11.fsproj" />
-    <ProjectReference Include="..\Solutions\AdventOfCode.Day12\AdventOfCode.Day12.fsproj" />
-    <ProjectReference Include="..\Solutions\AdventOfCode.Day13\AdventOfCode.Day13.fsproj" />
-    <ProjectReference Include="..\Solutions\AdventOfCode.Day14\AdventOfCode.Day14.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Solutions\AdventOfCode.Day01\AdventOfCode.Day01.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Solutions\AdventOfCode.Day02\AdventOfCode.Day02.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Solutions\AdventOfCode.Day03\AdventOfCode.Day03.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Solutions\AdventOfCode.Day04\AdventOfCode.Day04.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Solutions\AdventOfCode.Day05\AdventOfCode.Day05.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Solutions\AdventOfCode.Day06\AdventOfCode.Day06.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Solutions\AdventOfCode.Day07\AdventOfCode.Day07.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Solutions\AdventOfCode.Day08\AdventOfCode.Day08.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Solutions\AdventOfCode.Day09\AdventOfCode.Day09.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Solutions\AdventOfCode.Day10\AdventOfCode.Day10.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Solutions\AdventOfCode.Day11\AdventOfCode.Day11.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Solutions\AdventOfCode.Day12\AdventOfCode.Day12.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Solutions\AdventOfCode.Day13\AdventOfCode.Day13.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Solutions\AdventOfCode.Day14\AdventOfCode.Day14.fsproj" />
   </ItemGroup>
 
   <ItemGroup>
