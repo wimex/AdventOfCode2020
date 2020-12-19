@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using Microsoft.FSharp.Collections;
 
@@ -29,7 +30,7 @@ namespace AdventOfCode.Runner
 
             foreach ((int key, Type solution) in Solutions)
             {
-                if(solution == null)
+                if (solution == null)
                     continue;
 
                 PropertyInfo describe = solution.GetProperty("describe");
@@ -51,10 +52,7 @@ namespace AdventOfCode.Runner
             Console.WriteLine();
             Console.WriteLine(separator);
             Console.WriteLine();
-
-            string ident = puzzle.ToString().PadLeft(2, '0');
-            string input = $"App_Data{Path.DirectorySeparatorChar}day{ident}.txt";
-
+            
             Type target = Solutions[puzzle];
             MethodInfo execute = target.GetMethod("execute");
             if (execute == null)
@@ -63,7 +61,11 @@ namespace AdventOfCode.Runner
                 return;
             }
 
-            object[] parameters = {ListModule.OfSeq(new[] {input})};
+            DirectoryInfo root = new(Path.Combine(Directory.GetCurrentDirectory(), "App_Data"));
+            string pattern = $"day{puzzle.ToString().PadLeft(2, '0')}*.txt";
+
+            FileInfo[] files = root.GetFiles(pattern);
+            object[] parameters = { ListModule.OfSeq(files.Select(f => f.FullName)) };
             execute.Invoke(null, parameters);
 
             Console.WriteLine();
