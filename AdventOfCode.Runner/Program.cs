@@ -60,7 +60,7 @@ namespace AdventOfCode.Runner
                 Console.WriteLine("Unable to find puzzle entrypoint");
                 return;
             }
-
+            
             DirectoryInfo root = new(Path.Combine(Directory.GetCurrentDirectory(), "App_Data"));
             string pattern = $"day{puzzle.ToString().PadLeft(2, '0')}*.txt";
 
