@@ -63,7 +63,7 @@ module Puzzles =
         
     let execute (filenames: string list) =
         let lines = System.IO.File.ReadAllText(filenames.Head)
-        let passports = lines.Split("\n\n", System.StringSplitOptions.RemoveEmptyEntries) |> List.ofSeq |> List.map(fun l -> l.Replace('\n', ' '))
+        let passports = lines.Split([| "\r\n\r\n"; "\n\n" |], System.StringSplitOptions.RemoveEmptyEntries) |> List.ofSeq |> List.map(fun l -> l.Replace("\r\n", " ").Replace("\n", " "))
                             
         let puzzle1, puzzle2 = checkPassport passports 0 0
         
