@@ -12,11 +12,10 @@ namespace AdventOfCode.Runner
     {
         private static readonly Dictionary<int, Type> Solutions = new()
         {
-            {1, typeof(Day01.Puzzles)}, {2, typeof(Day02.Puzzles)}, {3, typeof(Day03.Puzzles)}, {4, typeof(Day04.Puzzles)},
-            {5, typeof(Day05.Puzzles)}, {6, typeof(Day06.Puzzles)}, {7, typeof(Day07.Puzzles)}, {8, typeof(Day08.Puzzles)},
-            {9, typeof(Day09.Puzzles)}, {10, typeof(Day10.Puzzles)}, {11, typeof(Day11.Puzzles)}, {12, typeof(Day12.Puzzles)},
-            {13, typeof(Day13.Puzzles)}, {14, typeof(Day14.Puzzles)}, {15, typeof(Day15.Puzzles)}, {16, typeof(Day16.Puzzles)},
-            {17, typeof(Day17.Puzzles)}, {18, typeof(Day18.Puzzles)}, {19, typeof(Day19.Puzzles)}, {20, typeof(Day20.Puzzles)},
+            { 1, typeof(Day01.Puzzles)}, { 2, typeof(Day02.Puzzles)}, { 3, typeof(Day03.Puzzles)}, { 4, typeof(Day04.Puzzles)}, { 5, typeof(Day05.Puzzles)}, 
+            { 6, typeof(Day06.Puzzles)}, { 7, typeof(Day07.Puzzles)}, { 8, typeof(Day08.Puzzles)}, { 9, typeof(Day09.Puzzles)}, {10, typeof(Day10.Puzzles)}, 
+            {11, typeof(Day11.Puzzles)}, {12, typeof(Day12.Puzzles)}, {13, typeof(Day13.Puzzles)}, {14, typeof(Day14.Puzzles)}, {15, typeof(Day15.Puzzles)}, 
+            {16, typeof(Day16.Puzzles)}, {17, typeof(Day17.Puzzles)}, {18, typeof(Day18.Puzzles)}, {19, typeof(Day19.Puzzles)}, {20, typeof(Day20.Puzzles)},
             {21, typeof(Day21.Puzzles)}, {22, typeof(Day22.Puzzles)}, {24, typeof(Day24.Puzzles)}, {25, typeof(Day25.Puzzles)}
         };
 
@@ -29,6 +28,7 @@ namespace AdventOfCode.Runner
             Console.WriteLine(separator);
             Console.WriteLine();
 
+            int index = 0;
             foreach ((int key, Type solution) in Solutions)
             {
                 if (solution == null)
@@ -37,7 +37,15 @@ namespace AdventOfCode.Runner
                 PropertyInfo describe = solution.GetProperty("describe");
                 string name = describe?.GetValue(null) as string;
 
-                Console.WriteLine($"{key.ToString(CultureInfo.InvariantCulture).PadLeft(2, '0')}: {(!string.IsNullOrEmpty(name) ? name : "(no description)")}");
+                int xpos = index % 2 == 0 ? 0 : Console.WindowWidth / 2;
+                int ypos = index / 2 + 3;
+                Console.SetCursorPosition(xpos, ypos);
+
+                string ident = key.ToString(CultureInfo.InvariantCulture).PadLeft(2, '0');
+                string descr = !string.IsNullOrEmpty(name) ? name : "(no description)";
+                Console.WriteLine($"{ident}: {descr}");
+
+                index++;
             }
 
             Console.WriteLine();
