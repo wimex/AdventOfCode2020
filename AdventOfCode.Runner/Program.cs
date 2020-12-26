@@ -24,6 +24,7 @@ namespace AdventOfCode.Runner
             string header = "Advent of Code 2020";
             string separator = new string('=', header.Length);
 
+            Console.Clear();
             Console.WriteLine(header);
             Console.WriteLine(separator);
             Console.WriteLine();
